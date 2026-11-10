@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>تمييز كلمة بمربع</title>
+<style>#w{left:40px;width:1000px;text-align:center;font-size:var(--sz,104px);font-weight:800;line-height:1.3;white-space:nowrap;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.hb{position:relative;display:inline-block;padding:0 .22em .08em;margin:0 .05em}
+.hb i{position:absolute;inset:0;background:var(--accent);border-radius:12px;transform-origin:right center;box-shadow:0 0 50px color-mix(in srgb,var(--accent) 45%,transparent)}
+.hb b{position:relative;font-weight:inherit}</style></head>
+<body>
+<div id="w" class="a ar"></div>
+<script>
+window.TPL = {duration:3, defaults:{text:'الأصوات #سيئة# جداً', y:1150, size:104, boxAt:.8},
+ build(D){const w=ML.$('w');w.style.top=D.y+'px';w.style.setProperty('--sz',D.size+'px');
+  w.innerHTML=ML.esc(D.text).replace(/#([^#]+)#/g,'<span class="hb"><i></i><b>$1</b></span>');},
+ draw(t,D){const w=ML.$('w');ML.riseIn(w,t,0,ML.dur);const k=ML.eo(ML.P(t,D.boxAt,D.boxAt+.32));
+  document.querySelectorAll('.hb').forEach(h=>{h.querySelector('i').style.transform=`scaleX(${k})`;h.querySelector('b').style.color=k>.5?'#0A0A0A':'inherit';});}};
+</script>
+<script src="_core.js"></script>
+</body></html>

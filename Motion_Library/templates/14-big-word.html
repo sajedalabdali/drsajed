@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>كلمة عملاقة</title>
+<style>#w{left:-200px;width:1480px;text-align:center;white-space:nowrap;font-weight:900;line-height:1;color:var(--accent);text-shadow:0 0 120px color-mix(in srgb,var(--accent) 45%,transparent)}</style></head>
+<body>
+<div id="w" class="a ar"></div>
+<script>
+window.TPL = {duration:3, defaults:{text:'كلمة', size:300, y:560, white:false},
+ build(D){const w=ML.$('w');w.textContent=D.text;w.style.fontSize=D.size+'px';w.style.top=D.y+'px';if(D.white){w.style.color='#f2efe9';w.style.textShadow='none';}},
+ draw(t,D){const e=ML.dur,ik=ML.e4(ML.P(t,0,.8)),ok=ML.eio(ML.P(t,e-.35,e));const w=ML.$('w');
+  ML.vis(w,Math.min(ML.eo(ML.P(t,0,.5)),1-ok),`translateX(${t*14}px) translateY(${ML.L(80,0,ik)-ok*40}px) scale(${ML.L(1.25,1,ik)+t*.012})`);ML.blur(w,ML.L(24,0,ik)+ok*14);}};
+</script>
+<script src="_core.js"></script>
+</body></html>

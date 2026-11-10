@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>إطار الهوية</title>
+<style>.gl{position:absolute;background:rgba(255,255,255,.07)}
+.cr{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px}.cr:before,.cr:after{content:"";position:absolute;background:rgba(255,255,255,.28)}.cr:before{left:14px;top:0;width:2px;height:30px}.cr:after{top:14px;left:0;height:2px;width:30px}
+#bar{left:64px;right:64px;top:118px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:23px;letter-spacing:.14em;color:#a1a1aa;text-transform:uppercase;direction:ltr;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+#bar b{color:#fafafa;font-weight:500}#bar i{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--accent);margin-right:12px;box-shadow:0 0 12px var(--accent)}
+#sh{left:0;top:0;width:1080px;height:1920px;background:linear-gradient(180deg,rgba(0,0,0,.5) 0,rgba(0,0,0,0) 17%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 78%,rgba(0,0,0,.78) 100%)}</style></head>
+<body>
+<div id="all" class="a" style="inset:0"><div id="sh" class="a"></div><div id="g"></div><div id="bar" class="a"><span id="lt"></span><span id="rt"></span></div></div>
+<script>
+window.TPL = {duration:10, defaults:{left:'BRAND · TOPIC', right:'SERIES · <b>01</b>', shade:true},
+ build(D){let h='';[[64,150,2,1640],[1014,150,2,1640]].forEach(([x,y,w,hh])=>h+=`<div class="gl" style="left:${x}px;top:${y}px;width:${w}px;height:${hh}px"></div>`);[220,1790].forEach(y=>h+=`<div class="gl" style="left:0;top:${y}px;width:1080px;height:2px"></div>`);
+  [[65,221],[1015,221],[65,1791],[1015,1791]].forEach(([x,y])=>h+=`<div class="cr" style="left:${x}px;top:${y}px"></div>`);ML.$('g').innerHTML=h;
+  ML.$('lt').innerHTML='<i></i>'+D.left;ML.$('rt').innerHTML=D.right;ML.$('sh').style.display=D.shade?'block':'none';},
+ draw(t,D){const e=ML.dur;ML.$('all').style.opacity=Math.min(ML.eo(ML.P(t,0,.4)),1-ML.P(t,e-.3,e));}};
+</script>
+<script src="_core.js"></script>
+</body></html>

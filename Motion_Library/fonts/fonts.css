@@ -1,0 +1,98 @@
+/* Motion Library fonts — every family is SIL Open Font License 1.1 (OFL.txt in each folder). */
+@font-face{font-family:'Alexandria';src:url("alexandria/Alexandria%5Bwght%5D.ttf");font-weight:100 900;font-display:block}
+@font-face{font-family:'Alkalami';src:url("alkalami/Alkalami-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Almarai';src:url("almarai/Almarai-Bold.ttf");font-weight:700;font-display:block}
+@font-face{font-family:'Almarai';src:url("almarai/Almarai-ExtraBold.ttf");font-weight:800;font-display:block}
+@font-face{font-family:'Almarai';src:url("almarai/Almarai-Light.ttf");font-weight:300;font-display:block}
+@font-face{font-family:'Almarai';src:url("almarai/Almarai-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Amiri';src:url("amiri/Amiri-Bold.ttf");font-weight:700;font-display:block}
+@font-face{font-family:'Amiri';src:url("amiri/Amiri-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Anton';src:url("anton/Anton-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Archivo Black';src:url("archivoblack/ArchivoBlack-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Aref Ruqaa';src:url("arefruqaa/ArefRuqaa-Bold.ttf");font-weight:700;font-display:block}
+@font-face{font-family:'Aref Ruqaa';src:url("arefruqaa/ArefRuqaa-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Badeen Display';src:url("badeendisplay/BadeenDisplay-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Baloo Bhaijaan 2';src:url("baloobhaijaan2/BalooBhaijaan2%5Bwght%5D.ttf");font-weight:400 800;font-display:block}
+@font-face{font-family:'Bebas Neue';src:url("bebasneue/BebasNeue-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Blaka';src:url("blaka/Blaka-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Cairo';src:url("cairo/Cairo%5Bslnt,wght%5D.ttf");font-weight:200 1000;font-display:block}
+@font-face{font-family:'Changa';src:url("changa/Changa%5Bwght%5D.ttf");font-weight:200 800;font-display:block}
+@font-face{font-family:'El Messiri';src:url("elmessiri/ElMessiri%5Bwght%5D.ttf");font-weight:400 700;font-display:block}
+@font-face{font-family:'Geist Mono';src:url("geistmono/GeistMono-Variable.woff2");font-weight:100 900;font-display:block}
+@font-face{font-family:'Gulzar';src:url("gulzar/Gulzar-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Handjet';src:url("handjet/Handjet%5BELGR,ELSH,wght%5D.ttf");font-weight:100 900;font-display:block}
+@font-face{font-family:'Harmattan';src:url("harmattan/Harmattan-Bold.ttf");font-weight:700;font-display:block}
+@font-face{font-family:'Harmattan';src:url("harmattan/Harmattan-Medium.ttf");font-weight:500;font-display:block}
+@font-face{font-family:'Harmattan';src:url("harmattan/Harmattan-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Harmattan';src:url("harmattan/Harmattan-SemiBold.ttf");font-weight:600;font-display:block}
+@font-face{font-family:'IBM Plex Sans Arabic';src:url("ibmplexsansarabic/IBMPlexSansArabic-Bold.ttf");font-weight:700;font-display:block}
+@font-face{font-family:'IBM Plex Sans Arabic';src:url("ibmplexsansarabic/IBMPlexSansArabic-ExtraLight.ttf");font-weight:200;font-display:block}
+@font-face{font-family:'IBM Plex Sans Arabic';src:url("ibmplexsansarabic/IBMPlexSansArabic-Light.ttf");font-weight:300;font-display:block}
+@font-face{font-family:'IBM Plex Sans Arabic';src:url("ibmplexsansarabic/IBMPlexSansArabic-Medium.ttf");font-weight:500;font-display:block}
+@font-face{font-family:'IBM Plex Sans Arabic';src:url("ibmplexsansarabic/IBMPlexSansArabic-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'IBM Plex Sans Arabic';src:url("ibmplexsansarabic/IBMPlexSansArabic-SemiBold.ttf");font-weight:600;font-display:block}
+@font-face{font-family:'IBM Plex Sans Arabic';src:url("ibmplexsansarabic/IBMPlexSansArabic-Thin.ttf");font-weight:100;font-display:block}
+@font-face{font-family:'Inter';src:url("inter/Inter%5Bopsz,wght%5D.ttf");font-weight:100 900;font-display:block}
+@font-face{font-family:'Jomhuria';src:url("jomhuria/Jomhuria-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Katibeh';src:url("katibeh/Katibeh-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Kufam';src:url("kufam/Kufam%5Bwght%5D.ttf");font-weight:400 900;font-display:block}
+@font-face{font-family:'Lalezar';src:url("lalezar/Lalezar-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Lateef';src:url("lateef/Lateef-Bold.ttf");font-weight:700;font-display:block}
+@font-face{font-family:'Lateef';src:url("lateef/Lateef-ExtraBold.ttf");font-weight:800;font-display:block}
+@font-face{font-family:'Lateef';src:url("lateef/Lateef-ExtraLight.ttf");font-weight:200;font-display:block}
+@font-face{font-family:'Lateef';src:url("lateef/Lateef-Light.ttf");font-weight:300;font-display:block}
+@font-face{font-family:'Lateef';src:url("lateef/Lateef-Medium.ttf");font-weight:500;font-display:block}
+@font-face{font-family:'Lateef';src:url("lateef/Lateef-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Lateef';src:url("lateef/Lateef-SemiBold.ttf");font-weight:600;font-display:block}
+@font-face{font-family:'Lemonada';src:url("lemonada/Lemonada%5Bwght%5D.ttf");font-weight:300 700;font-display:block}
+@font-face{font-family:'Mada';src:url("mada/Mada%5Bwght%5D.ttf");font-weight:200 900;font-display:block}
+@font-face{font-family:'Marhey';src:url("marhey/Marhey%5Bwght%5D.ttf");font-weight:300 700;font-display:block}
+@font-face{font-family:'Markazi Text';src:url("markazitext/MarkaziText%5Bwght%5D.ttf");font-weight:400 700;font-display:block}
+@font-face{font-family:'Mirza';src:url("mirza/Mirza-Bold.ttf");font-weight:700;font-display:block}
+@font-face{font-family:'Mirza';src:url("mirza/Mirza-Medium.ttf");font-weight:500;font-display:block}
+@font-face{font-family:'Mirza';src:url("mirza/Mirza-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Mirza';src:url("mirza/Mirza-SemiBold.ttf");font-weight:600;font-display:block}
+@font-face{font-family:'Montserrat';src:url("montserrat/Montserrat%5Bwght%5D.ttf");font-weight:100 900;font-display:block}
+@font-face{font-family:'Noto Kufi Arabic';src:url("notokufiarabic/NotoKufiArabic%5Bwght%5D.ttf");font-weight:100 900;font-display:block}
+@font-face{font-family:'Noto Naskh Arabic';src:url("notonaskharabic/NotoNaskhArabic%5Bwght%5D.ttf");font-weight:400 700;font-display:block}
+@font-face{font-family:'Noto Sans Arabic';src:url("notosansarabic/NotoSansArabic%5Bwdth,wght%5D.ttf");font-weight:100 900;font-display:block}
+@font-face{font-family:'Playfair Display';src:url("playfairdisplay/PlayfairDisplay%5Bwght%5D.ttf");font-weight:400 900;font-display:block}
+@font-face{font-family:'Playpen Sans Arabic';src:url("playpensansarabic/PlaypenSansArabic%5Bwght%5D.ttf");font-weight:100 800;font-display:block}
+@font-face{font-family:'Poppins';src:url("poppins/Poppins-Black.ttf");font-weight:900;font-display:block}
+@font-face{font-family:'Poppins';src:url("poppins/Poppins-Bold.ttf");font-weight:700;font-display:block}
+@font-face{font-family:'Poppins';src:url("poppins/Poppins-ExtraBold.ttf");font-weight:800;font-display:block}
+@font-face{font-family:'Poppins';src:url("poppins/Poppins-ExtraLight.ttf");font-weight:200;font-display:block}
+@font-face{font-family:'Poppins';src:url("poppins/Poppins-Light.ttf");font-weight:300;font-display:block}
+@font-face{font-family:'Poppins';src:url("poppins/Poppins-Medium.ttf");font-weight:500;font-display:block}
+@font-face{font-family:'Poppins';src:url("poppins/Poppins-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Poppins';src:url("poppins/Poppins-SemiBold.ttf");font-weight:600;font-display:block}
+@font-face{font-family:'Poppins';src:url("poppins/Poppins-Thin.ttf");font-weight:100;font-display:block}
+@font-face{font-family:'Qahiri';src:url("qahiri/Qahiri-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Rakkas';src:url("rakkas/Rakkas-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Readex Pro';src:url("readexpro/ReadexPro%5BHEXP,wght%5D.ttf");font-weight:160 700;font-display:block}
+@font-face{font-family:'Reem Kufi';src:url("reemkufi/ReemKufi%5Bwght%5D.ttf");font-weight:400 700;font-display:block}
+@font-face{font-family:'Reem Kufi Fun';src:url("reemkufifun/ReemKufiFun%5Bwght%5D.ttf");font-weight:400 700;font-display:block}
+@font-face{font-family:'Rubik';src:url("rubik/Rubik%5Bwght%5D.ttf");font-weight:300 900;font-display:block}
+@font-face{font-family:'Ruwudu';src:url("ruwudu/Ruwudu-Bold.ttf");font-weight:700;font-display:block}
+@font-face{font-family:'Ruwudu';src:url("ruwudu/Ruwudu-Medium.ttf");font-weight:500;font-display:block}
+@font-face{font-family:'Ruwudu';src:url("ruwudu/Ruwudu-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Ruwudu';src:url("ruwudu/Ruwudu-SemiBold.ttf");font-weight:600;font-display:block}
+@font-face{font-family:'Scheherazade New';src:url("scheherazadenew/ScheherazadeNew-Bold.ttf");font-weight:700;font-display:block}
+@font-face{font-family:'Scheherazade New';src:url("scheherazadenew/ScheherazadeNew-Medium.ttf");font-weight:500;font-display:block}
+@font-face{font-family:'Scheherazade New';src:url("scheherazadenew/ScheherazadeNew-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Scheherazade New';src:url("scheherazadenew/ScheherazadeNew-SemiBold.ttf");font-weight:600;font-display:block}
+@font-face{font-family:'Space Grotesk';src:url("spacegrotesk/SpaceGrotesk%5Bwght%5D.ttf");font-weight:300 700;font-display:block}
+@font-face{font-family:'Tajawal';src:url("tajawal/Tajawal-Black.ttf");font-weight:900;font-display:block}
+@font-face{font-family:'Tajawal';src:url("tajawal/Tajawal-Bold.ttf");font-weight:700;font-display:block}
+@font-face{font-family:'Tajawal';src:url("tajawal/Tajawal-ExtraBold.ttf");font-weight:800;font-display:block}
+@font-face{font-family:'Tajawal';src:url("tajawal/Tajawal-ExtraLight.ttf");font-weight:200;font-display:block}
+@font-face{font-family:'Tajawal';src:url("tajawal/Tajawal-Light.ttf");font-weight:300;font-display:block}
+@font-face{font-family:'Tajawal';src:url("tajawal/Tajawal-Medium.ttf");font-weight:500;font-display:block}
+@font-face{font-family:'Tajawal';src:url("tajawal/Tajawal-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Vibes';src:url("vibes/Vibes-Regular.ttf");font-weight:400;font-display:block}
+@font-face{font-family:'Zain';src:url("zain/Zain-Black.ttf");font-weight:900;font-display:block}
+@font-face{font-family:'Zain';src:url("zain/Zain-Bold.ttf");font-weight:700;font-display:block}
+@font-face{font-family:'Zain';src:url("zain/Zain-ExtraBold.ttf");font-weight:800;font-display:block}
+@font-face{font-family:'Zain';src:url("zain/Zain-ExtraLight.ttf");font-weight:200;font-display:block}
+@font-face{font-family:'Zain';src:url("zain/Zain-Light.ttf");font-weight:300;font-display:block}
+@font-face{font-family:'Zain';src:url("zain/Zain-Regular.ttf");font-weight:400;font-display:block}

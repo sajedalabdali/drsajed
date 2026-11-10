@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>إشعار جوال</title>
+<style>#nt{left:70px;width:940px;padding:30px 34px;border-radius:44px;background:rgba(36,36,38,.86);backdrop-filter:blur(20px);border:1.5px solid rgba(255,255,255,.08);box-shadow:0 30px 90px rgba(0,0,0,.6);display:flex;gap:26px;align-items:center}
+#ap{width:100px;height:100px;border-radius:26px;flex:none;background:linear-gradient(135deg,var(--accent),#7a2e16);display:flex;align-items:center;justify-content:center}
+#bd{flex:1;min-width:0}#hd{display:flex;justify-content:space-between;font-family:var(--mono);font-size:22px;color:#9a9aa2;letter-spacing:.08em;direction:ltr}
+#ti{font-size:42px;font-weight:700;margin-top:6px;direction:ltr;text-align:right}#tx{font-size:40px;color:#e3e3e8;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}</style></head>
+<body>
+<div id="nt" class="a ar"><div id="ap"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="#fff"/></svg></div><div id="bd"><div id="hd"><span id="an"></span><span id="tm"></span></div><div id="ti"></div><div id="tx"></div></div></div>
+<script>
+window.TPL = {duration:3.2, defaults:{app:'APP', title:'العنوان', text:'نص الإشعار', time:'now', y:300},
+ build(D){const $=ML.$;$('an').textContent=D.app;$('tm').textContent=D.time;$('ti').textContent=D.title;$('tx').innerHTML=ML.rich(D.text);},
+ draw(t,D){const $=ML.$,e=ML.dur,k=ML.back(ML.P(t,0,.55)),o=ML.eio(ML.P(t,e-.45,e));ML.vis($('nt'),Math.min(ML.cl(k*2),1-o),`translateY(${D.y+ML.L(-420,0,ML.cl(k,0,1.08))-o*420}px) scale(${ML.L(.92,1,ML.cl(k))})`);}};
+</script>
+<script src="_core.js"></script>
+</body></html>

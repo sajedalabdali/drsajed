@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>بطاقة الاسم</title>
+<style>#lt{left:110px;width:860px;height:190px;display:flex;align-items:center;gap:28px;padding:0 40px;overflow:hidden}
+#bar{width:10px;height:120px;border-radius:5px;background:var(--accent);transform-origin:50% 0;box-shadow:0 0 30px var(--accent)}
+#tx{flex:1}#nm{font-size:62px;font-weight:800;white-space:nowrap}#rl{font-size:32px;color:#b5b5bb;margin-top:6px;white-space:nowrap}
+#tg{font-family:var(--mono);font-size:22px;letter-spacing:.12em;color:var(--accent);direction:ltr}</style></head>
+<body>
+<div id="lt" class="a glass ar"><div id="bar"></div><div id="tx"><div id="nm"></div><div id="rl"></div></div><div id="tg"></div></div>
+<script>
+window.TPL = {duration:4, defaults:{name:'الاسم', role:'الوصف', tag:'', y:1450},
+ build(D){const $=ML.$;$('lt').style.top=D.y+'px';$('nm').textContent=D.name;$('rl').textContent=D.role;$('tg').textContent=D.tag||'';},
+ draw(t,D){const $=ML.$,e=ML.dur;const k=ML.ex(ML.P(t,0,.5)),o=ML.eio(ML.P(t,e-.4,e));
+  ML.vis($('lt'),Math.min(k,1-o),`translateY(${ML.L(70,0,k)+o*40}px) scale(${ML.L(.94,1,k)})`);
+  $('bar').style.transform=`scaleY(${ML.eo(ML.P(t,.2,.6))})`;
+  const n=ML.e4(ML.P(t,.3,.9));$('nm').style.transform=`translateX(${ML.L(-60,0,n)}px)`;$('nm').style.opacity=n;
+  const r=ML.eo(ML.P(t,.55,1.0));$('rl').style.opacity=r;$('rl').style.transform=`translateY(${ML.L(14,0,r)}px)`;$('tg').style.opacity=ML.eo(ML.P(t,.8,1.1));}};
+</script>
+<script src="_core.js"></script>
+</body></html>

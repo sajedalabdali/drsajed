@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>دائرة نسبة</title>
+<style>#rg{left:290px;width:500px;height:500px}#rg svg{position:absolute;inset:0}
+#n{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Readex Pro';font-weight:600;font-size:150px;letter-spacing:-.05em;direction:ltr}
+#n small{font-size:70px;color:var(--accent);margin-left:6px}
+#lb{left:60px;width:960px;text-align:center;font-size:56px;font-weight:700;text-shadow:0 4px 30px rgba(0,0,0,.6)}</style></head>
+<body>
+<div id="rg" class="a"><svg viewBox="0 0 500 500"><circle cx="250" cy="250" r="215" fill="rgba(10,10,10,.75)" stroke="#2a2725" stroke-width="30"/><circle id="arc" cx="250" cy="250" r="215" fill="none" stroke="var(--accent)" stroke-width="30" stroke-linecap="round" transform="rotate(-90 250 250)" stroke-dasharray="1351" stroke-dashoffset="1351"/></svg><div id="n"><span id="nv">0</span><small>%</small></div></div><div id="lb" class="a ar"></div>
+<script>
+window.TPL = {duration:3.5, defaults:{value:75, label:'الوصف', y:560},
+ build(D){const $=ML.$;$('rg').style.top=D.y+'px';$('lb').style.top=(D.y+540)+'px';$('lb').innerHTML=ML.rich(D.label);},
+ draw(t,D){const $=ML.$,e=ML.dur,k=ML.back(ML.P(t,0,.5)),o=ML.eio(ML.P(t,e-.4,e));ML.vis($('rg'),Math.min(ML.cl(k*1.5),1-o),`scale(${ML.cl(k,0,1.1)*ML.L(1,.9,o)})`);
+  const g=ML.eio(ML.P(t,.35,1.7))*D.value/100;$('arc').setAttribute('stroke-dashoffset',1351*(1-g));$('nv').textContent=Math.round(g*100);
+  $('arc').style.filter=`drop-shadow(0 0 ${12+20*Math.sin(Math.PI*ML.P(t,1.6,2.2))}px ${D.accent})`;ML.riseIn($('lb'),t,.7,e);}};
+</script>
+<script src="_core.js"></script>
+</body></html>

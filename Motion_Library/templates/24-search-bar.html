@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>شريط بحث</title>
+<style>#sb{left:80px;width:920px}#bar{height:110px;border-radius:55px;background:rgba(28,28,30,.95);border:2px solid #333;display:flex;align-items:center;gap:22px;padding:0 36px;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+#q{font-size:42px;white-space:nowrap;overflow:hidden;flex:1}#cr{width:4px;height:52px;background:var(--accent)}
+.r{margin-top:18px;height:100px;border-radius:24px;background:rgba(20,20,22,.94);border:1.5px solid #2a2a2c;display:flex;align-items:center;gap:20px;padding:0 30px;font-size:36px;white-space:nowrap;overflow:hidden}
+.r b{color:var(--accent);font-family:var(--mono);font-weight:400}</style></head>
+<body>
+<div id="sb" class="a"><div id="bar"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#9a9aa2" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span id="q"></span><span id="cr"></span></div><div id="rs"></div></div>
+<script>
+window.TPL = {duration:4.2, defaults:{query:'البحث', results:[], rtl:true, y:620, cps:18},
+ build(D){const $=ML.$;$('sb').style.top=D.y+'px';if(D.rtl){$('bar').style.direction='rtl';$('rs').style.direction='rtl';}
+  $('rs').innerHTML=D.results.map((r,i)=>`<div class="r" id="r${i}"><b>↗</b><span>${ML.rich(r)}</span></div>`).join('');},
+ draw(t,D){const $=ML.$,e=ML.dur,k=ML.ex(ML.P(t,0,.4)),o=ML.eio(ML.P(t,e-.4,e));ML.vis($('bar'),Math.min(k,1-o),`scale(${ML.L(.92,1,k)})`);
+  const ch=[...D.query],tEnd=.4+ch.length/D.cps;$('q').textContent=ch.slice(0,ML.cl(Math.floor((t-.4)*D.cps),0,ch.length)).join('');$('cr').style.opacity=t<tEnd?1:(Math.floor(t*2.4)%2);
+  D.results.forEach((r,i)=>{const T=tEnd+.3+i*.22,q=ML.eo(ML.P(t,T,T+.35));ML.vis($('r'+i),Math.min(q,1-o),`translateY(${ML.L(30,0,q)}px)`);});}};
+</script>
+<script src="_core.js"></script>
+</body></html>

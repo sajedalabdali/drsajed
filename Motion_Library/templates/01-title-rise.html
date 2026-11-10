@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>عنوان صاعد</title>
+<style>#hd{left:60px;width:960px;text-align:center}
+#k{font-family:var(--mono);font-size:25px;letter-spacing:.2em;color:#a1a1aa;text-transform:uppercase;margin-bottom:22px;direction:ltr}
+#l1{font-size:62px;font-weight:400;color:#d4d4d8;line-height:1.35}
+#l2{font-size:var(--big,96px);font-weight:800;line-height:1.3;white-space:nowrap}
+.ln{text-shadow:0 4px 30px rgba(0,0,0,.6);padding-bottom:6px}</style></head>
+<body>
+<div id="hd" class="a ar"><div id="k"></div><div id="l1" class="ln"></div><div id="l2" class="ln"></div></div>
+<script>
+window.TPL = {duration:3.5, defaults:{kicker:'KICKER · TEXT', line1:'السطر الصغير', line2:'العنوان *الكبير*', y:282, bigSize:96},
+ build(D){const $=ML.$;$('hd').style.top=D.y+'px';$('k').textContent=D.kicker||'';$('l1').innerHTML=ML.rich(D.line1||'');$('l2').innerHTML=ML.rich(D.line2||'');$('l2').style.setProperty('--big',D.bigSize+'px');},
+ draw(t,D){const $=ML.$,e=ML.dur;const ki=ML.eo(ML.P(t,0,.45)),ko=ML.eio(ML.P(t,e-.45,e-.1));ML.vis($('k'),Math.min(ki,1-ko),`translateY(${ML.L(16,0,ki)-ko*12}px)`);
+  ML.riseIn($('l1'),t,.05,e);ML.riseIn($('l2'),t,.35,e+.04);}};
+</script>
+<script src="_core.js"></script>
+</body></html>

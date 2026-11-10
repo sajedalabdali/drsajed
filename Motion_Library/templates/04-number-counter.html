@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>عدّاد أرقام</title>
+<style>#c{left:0;width:1080px;text-align:center}
+#n{font-family:'Readex Pro';font-size:var(--sz,260px);font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--accent);direction:ltr}
+#lb{font-size:58px;font-weight:700;margin-top:18px;text-shadow:0 4px 30px rgba(0,0,0,.6)}</style></head>
+<body>
+<div id="c" class="a"><div id="n" class="num"></div><div id="lb" class="ar"></div></div>
+<script>
+window.TPL = {duration:3.5, defaults:{value:100, prefix:'', suffix:'%', decimals:0, label:'وصف الرقم', y:700, size:260},
+ build(D){const $=ML.$;$('c').style.top=D.y+'px';$('n').style.setProperty('--sz',D.size+'px');$('lb').innerHTML=ML.rich(D.label);},
+ draw(t,D){const $=ML.$,e=ML.dur;const k=ML.ex(ML.P(t,0,.45)),o=ML.eio(ML.P(t,e-.4,e));ML.vis($('c'),Math.min(k,1-o),`scale(${ML.L(.85,1,k)*ML.L(1,1.04,o)})`);ML.blur($('c'),ML.L(16,0,k)+o*12);
+  const c=ML.eio(ML.P(t,.2,1.6));const v=(D.value*c).toLocaleString('en-US',{minimumFractionDigits:D.decimals,maximumFractionDigits:D.decimals});
+  $('n').textContent=(D.prefix||'')+v+(D.suffix||'');const g=Math.sin(Math.PI*ML.P(t,1.55,2.2));$('n').style.textShadow=`0 0 ${40+60*g}px color-mix(in srgb,var(--accent) 55%,transparent)`;
+  const l=ML.eo(ML.P(t,.6,1.1));$('lb').style.opacity=l;$('lb').style.transform=`translateY(${ML.L(20,0,l)}px)`;}};
+</script>
+<script src="_core.js"></script>
+</body></html>

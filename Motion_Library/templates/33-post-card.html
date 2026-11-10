@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>بطاقة منشور</title>
+<style>#pc{left:90px;width:900px;padding:40px 44px}#hd{display:flex;align-items:center;gap:22px}#av{width:96px;height:96px;border-radius:50%;background:conic-gradient(var(--accent),#fff,var(--accent));padding:4px;flex:none}#av i{display:block;width:100%;height:100%;border-radius:50%;background:#1b1b1b}
+#nm{font-size:44px;font-weight:800}#hn{font-family:var(--mono);font-size:24px;color:#8d8a84;direction:ltr;text-align:right}
+#tx{font-size:50px;font-weight:600;line-height:1.5;margin-top:30px}#ft{display:flex;gap:46px;margin-top:34px;font-family:'Readex Pro';font-size:34px;color:#9a9aa2;direction:ltr;justify-content:flex-end}#ft span{display:flex;align-items:center;gap:12px}#lk{color:var(--accent)}</style></head>
+<body>
+<div id="pc" class="a glass ar"><div id="hd"><div id="av"><i></i></div><div><div id="nm"></div><div id="hn"></div></div></div><div id="tx"></div><div id="ft"><span>↻ <b id="rp">0</b></span><span id="lk">♥ <b id="lv">0</b></span></div></div>
+<script>
+window.TPL = {duration:4, defaults:{name:'الاسم', handle:'@handle', text:'النص', likes:1000, y:640},
+ build(D){const $=ML.$;$('pc').style.top=D.y+'px';$('nm').textContent=D.name;$('hn').textContent=D.handle;$('tx').innerHTML=ML.rich(D.text);},
+ draw(t,D){const $=ML.$,e=ML.dur,k=ML.ex(ML.P(t,0,.5)),o=ML.eio(ML.P(t,e-.4,e));ML.vis($('pc'),Math.min(k,1-o),`translateY(${ML.L(90,0,k)}px) scale(${ML.L(.94,1,k)}) rotate(${ML.L(-3,0,k)}deg)`);
+  ML.riseIn($('tx'),t,.4,e+1);const c=ML.eio(ML.P(t,1.0,2.4));const f=n=>n>=1000?(n/1000).toFixed(n>=10000?0:1)+'K':String(Math.round(n));$('lv').textContent=f(D.likes*c);$('rp').textContent=f(D.likes*.18*c);
+  $('lk').style.transform=`scale(${1+.15*Math.sin(Math.PI*ML.P(t,2.3,2.6))})`;}};
+</script>
+<script src="_core.js"></script>
+</body></html>

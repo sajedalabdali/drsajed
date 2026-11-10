@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>آلة كاتبة</title>
+<style>#tw{left:80px;width:920px;text-align:center;font-size:var(--sz,88px);font-weight:800;line-height:1.35;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.cur{display:inline-block;width:.08em;height:.9em;background:var(--accent);vertical-align:-.1em;margin:0 .04em;box-shadow:0 0 18px var(--accent)}</style></head>
+<body>
+<div id="tw" class="a ar"></div>
+<script>
+window.TPL = {duration:4, defaults:{lines:['النص هنا'], y:700, size:88, cps:14},
+ build(D){const w=ML.$('tw');w.style.top=D.y+'px';w.style.setProperty('--sz',D.size+'px');},
+ draw(t,D){const e=ML.dur,o=ML.eio(ML.P(t,e-.35,e));let at=.15,h='';
+  D.lines.forEach((ln,li)=>{const plain=ln.replace(/\*/g,''),ch=[...plain],n=ML.cl(Math.floor((t-at)*D.cps),0,ch.length);
+   let k=0,out='';const parts=ln.split(/(\*[^*]+\*)/);parts.forEach(p=>{const acc=/^\*.*\*$/.test(p),txt=[...(acc?p.slice(1,-1):p)];const take=txt.slice(0,Math.max(0,n-k)).join('');k+=txt.length;if(take)out+=acc?`<span class="acc">${ML.esc(take)}</span>`:ML.esc(take);});
+   const typing=t>=at&&n<ch.length,last=li==D.lines.length-1||t<at+ch.length/D.cps+.25;
+   h+=`<div>${out}${(typing||(n==ch.length&&last))&&t>=at?`<span class="cur" style="opacity:${typing?1:(Math.floor(t*2.4)%2)}"></span>`:''}</div>`;at+=ch.length/D.cps+.25;});
+  const w=ML.$('tw');w.innerHTML=h;w.style.opacity=1-o;w.style.transform=`translateY(${-o*30}px)`;ML.blur(w,o*10);}};
+</script>
+<script src="_core.js"></script>
+</body></html>

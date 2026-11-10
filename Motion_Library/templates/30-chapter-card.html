@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>بطاقة فصل</title>
+<style>#bg{left:0;top:0;width:1080px;height:1920px;background:#0A0A0A}#bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 60%)}
+#cn{left:0;width:1080px;top:640px;text-align:center}#nm{font-family:'Readex Pro';font-weight:600;font-size:280px;letter-spacing:-.06em;line-height:1;color:var(--accent);direction:ltr}
+#ln{width:120px;height:6px;background:var(--accent);margin:40px auto;border-radius:3px}#ti{font-size:110px;font-weight:900;line-height:1.2}#sb{font-family:var(--mono);font-size:26px;letter-spacing:.24em;color:#8d8a84;margin-top:26px;direction:ltr}</style></head>
+<body>
+<div id="bg" class="a"></div><div id="cn" class="a ar"><div id="nm"></div><div id="ln"></div><div id="ti"></div><div id="sb"></div></div>
+<script>
+window.TPL = {duration:2.5, defaults:{number:'01', title:'العنوان', sub:''},
+ build(D){const $=ML.$;$('nm').textContent=D.number;$('ti').innerHTML=ML.rich(D.title);$('sb').textContent=D.sub;},
+ draw(t,D){const $=ML.$,e=ML.dur,i=ML.eio(ML.P(t,0,.35)),o=ML.eio(ML.P(t,e-.35,e));$('bg').style.clipPath=`inset(${(1-i)*50}% 0 ${(1-i)*50}% 0)`;$('bg').style.opacity=1-o;
+  const n=ML.e4(ML.P(t,.2,.8));ML.vis($('nm'),n*(1-o),`translateY(${ML.L(60,0,n)}px) scale(${ML.L(1.2,1,n)})`);ML.blur($('nm'),ML.L(16,0,n)+o*10);
+  $('ln').style.transform=`scaleX(${ML.eo(ML.P(t,.45,.85))*(1-o)})`;ML.riseIn($('ti'),t,.5,e);ML.riseIn($('sb'),t,.75,e);}};
+</script>
+<script src="_core.js"></script>
+</body></html>

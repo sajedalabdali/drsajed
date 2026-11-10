@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>عدّ تنازلي</title>
+<style>#cd{left:240px;width:600px;height:600px}#cd canvas{position:absolute;inset:0}
+#n{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Readex Pro';font-weight:600;font-size:300px;letter-spacing:-.05em}
+#en{position:absolute;left:-240px;width:1080px;top:200px;text-align:center;font-size:170px;font-weight:900;color:var(--accent);white-space:nowrap}</style></head>
+<body>
+<div id="cd" class="a"><canvas id="c" width="600" height="600"></canvas><div id="n"></div><div id="en" class="ar"></div></div>
+<script>
+window.TPL = {duration:4, defaults:{from:3, end:'يلا!', y:620, step:1},
+ build(D){ML.$('cd').style.top=D.y+'px';ML.$('en').textContent=D.end;ML.dur=D.duration||D.from*D.step+1;},
+ draw(t,D){const $=ML.$,c=$('c').getContext('2d');c.clearRect(0,0,600,600);const i=Math.floor(t/D.step),u=(t%D.step)/D.step;
+  if(i<D.from){const n=D.from-i;$('n').textContent=n;const k=ML.eo(ML.P(u,0,.25));$('n').style.opacity=Math.min(1,k*2)*(1-ML.P(u,.85,1));$('n').style.transform=`scale(${ML.L(1.4,1,k)})`;$('en').style.opacity=0;
+   c.lineWidth=18;c.strokeStyle='#2a2725';c.beginPath();c.arc(300,300,250,0,7);c.stroke();c.strokeStyle=D.accent;c.lineCap='round';c.beginPath();c.arc(300,300,250,-Math.PI/2,-Math.PI/2+Math.PI*2*(1-u));c.stroke();}
+  else{const u2=t-D.from*D.step,k=ML.back(ML.P(u2,0,.4));$('n').style.opacity=0;ML.vis($('en'),Math.min(ML.cl(k*2),1-ML.P(u2,.75,1)),`scale(${ML.cl(k,0,1.2)})`);ML.burst(c,u2,0,300,300,.8);}}};
+</script>
+<script src="_core.js"></script>
+</body></html>

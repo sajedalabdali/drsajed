@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>كلمات متتالية</title>
+<style>#kw{left:-100px;width:1280px;text-align:center;font-size:var(--sz,190px);font-weight:900;line-height:1.2;white-space:nowrap;text-shadow:0 6px 40px rgba(0,0,0,.6)}</style></head>
+<body>
+<div id="kw" class="a ar"></div>
+<script>
+window.TPL = {duration:3, defaults:{words:['كلمة','كلمة'], times:null, y:820, size:190},
+ build(D){const w=ML.$('kw');w.style.top=D.y+'px';w.style.setProperty('--sz',D.size+'px');const n=D.words.length;window._KT=D.times||D.words.map((_,i)=>.1+i*(ML.dur-.5)/n);},
+ draw(t,D){const K=window._KT,w=ML.$('kw');let i=-1;K.forEach((s,j)=>{if(t>=s)i=j;});if(i<0){w.style.opacity=0;return;}
+  if(w.dataset.i!=i){w.dataset.i=i;w.innerHTML=ML.rich(D.words[i]);}const k=ML.P(t,K[i],K[i]+.16),o=ML.eio(ML.P(t,ML.dur-.3,ML.dur));
+  w.style.opacity=Math.min(1,k*4)*(1-o);w.style.transform=`scale(${ML.L(1.45,1,ML.eo(k))+.02*ML.P(t,K[i],K[i]+1)})`;ML.blur(w,ML.L(10,0,ML.eo(k))+o*10);}};
+</script>
+<script src="_core.js"></script>
+</body></html>

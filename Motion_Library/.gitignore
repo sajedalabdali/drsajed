@@ -1,0 +1,4 @@
+node_modules/
+output/
+qc/
+.DS_Store

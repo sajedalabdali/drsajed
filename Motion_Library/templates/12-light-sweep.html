@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>لمعة ضوء</title>
+<style>canvas{left:0;top:0}</style></head>
+<body>
+<canvas id="c" class="a" width="1080" height="1920"></canvas>
+<script>
+window.TPL = {duration:.7, defaults:{flash:.22},
+ draw(t,D){const c=ML.$('c').getContext('2d'),e=ML.dur;c.clearRect(0,0,1080,1920);const k=ML.P(t,0,e),x=ML.L(-700,1780,ML.eio(k));
+  c.save();c.translate(x,960);c.rotate(-.35);const g=c.createLinearGradient(-260,0,260,0);const A=D.accent;
+  g.addColorStop(0,A+'00');g.addColorStop(.42,A+'60');g.addColorStop(.5,'rgba(255,240,230,.78)');g.addColorStop(.58,A+'60');g.addColorStop(1,A+'00');c.fillStyle=g;c.fillRect(-260,-1600,520,3200);c.restore();
+  const fl=Math.max(0,1-Math.abs(t-e/2)/.12);if(fl>0){c.fillStyle=`rgba(255,240,230,${D.flash*fl})`;c.fillRect(0,0,1080,1920);}}};
+</script>
+<script src="_core.js"></script>
+</body></html>

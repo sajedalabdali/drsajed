@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>احفظ وشارك وتابعني</title>
+<style>#iB,#iS{width:190px;height:190px;border-radius:52px;display:flex;align-items:center;justify-content:center}
+#fol{left:110px;width:860px;height:160px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 40px;direction:ltr}
+#fb{width:330px;height:88px;border-radius:22px;background:var(--accent);color:#000;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;direction:rtl}
+#hand{left:0;top:0;width:100px;height:100px;z-index:9}canvas{left:0;top:0}</style></head>
+<body>
+<canvas id="fx" class="a" width="1080" height="1920"></canvas>
+<div id="iB" class="a glass"><svg viewBox="0 0 24 24" width="110" height="110"><path id="bm" d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+<div id="iS" class="a glass"><svg id="pl" viewBox="0 0 24 24" width="104" height="104" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></div>
+<div id="fol" class="a glass"><div><div class="num" id="hd" style="font-size:52px"></div><div class="mono" id="sb" style="font-size:20px;color:#777;letter-spacing:.18em;margin-top:4px"></div></div><div id="fb"><span id="ft"></span></div></div>
+<svg id="hand" class="a" viewBox="0 0 24 24"><path d="M9 11.5V4.8a1.6 1.6 0 0 1 3.2 0v5.4l.1-1.3a1.6 1.6 0 0 1 3.2.2v1.3a1.6 1.6 0 0 1 3.1.4v1a1.6 1.6 0 0 1 3 .6v4.1c0 3.3-2.6 6-5.9 6h-2.2a6 6 0 0 1-4.6-2.2l-3.6-4.4a1.7 1.7 0 0 1 2.5-2.3L9 15z" fill="#fff" stroke="#000" stroke-width="1.1" stroke-linejoin="round"/></svg>
+<script>
+window.TPL = {duration:3.8, defaults:{handle:'@yourname', sub:'INSTAGRAM', follow:'تابعني', followed:'✓ تمت المتابعة', y:1210},
+ build(D){const $=ML.$;$('hd').textContent=D.handle;$('sb').textContent=D.sub;$('fol').style.top=(D.y+230)+'px';},
+ draw(u,D){const $=ML.$,Y0=D.y,c=$('fx').getContext('2d');c.clearRect(0,0,1080,1920);const E=ML.eio,P=ML.P,L=ML.L;
+  const ik=E(P(u,0,.4));ML.vis($('iB'),ik,`translate(${L(445,250,E(P(u,.15,.45)))}px,${L(Y0+60,Y0,ik)}px) scale(${L(.85,1,ik)*(u>.42&&u<.54?.94:1)})`);
+  const f=E(P(u,.45,.62));$('bm').setAttribute('fill',f>0?D.accent:'none');$('bm').setAttribute('fill-opacity',f);$('bm').setAttribute('stroke',f>.5?D.accent:'#fff');
+  const sk=E(P(u,.4,.75));ML.vis($('iS'),u>.4?sk:0,`translate(640px,${L(Y0+60,Y0,sk)}px) scale(${L(.85,1,sk)*(u>.85&&u<.97?.94:1)})`);
+  const fl=E(P(u,.92,1.35));$('pl').style.transform=`translate(${fl*200}px,${-fl*200}px) rotate(${fl*15}deg)`;$('pl').style.opacity=1-P(u,1.15,1.35);
+  const fk=E(P(u,1.35,1.75));ML.vis($('fol'),u>1.35?fk:0,`translateY(${L(70,0,fk)}px) scale(${u>2.15?1+.025*Math.sin(Math.PI*P(u,2.15,2.5)):L(.96,1,fk)})`);
+  const fd=u>2.15;$('fb').style.background=fd?'#1d1d1d':D.accent;$('fb').style.color=fd?'#fff':'#000';$('ft').textContent=fd?D.followed:D.follow;$('fb').style.transform=`scale(${u>2.05&&u<2.2?.95:1})`;
+  const h1=E(P(u,.1,.4)),h2=E(P(u,.58,.85)),h3=E(P(u,1.4,2.05)),h4=E(P(u,2.5,3.0));let hx=L(900,345,h1),hy=L(1700,Y0+95,h1);hx=L(hx,735,h2);hy=L(hy,Y0+95,h2);hx=L(hx,830,h3);hy=L(hy,Y0+310,h3);hx=L(hx,980,h4);hy=L(hy,1760,h4);
+  const tap=(u>.42&&u<.54)||(u>.85&&u<.97)||(u>2.05&&u<2.2);ML.vis($('hand'),u>.1&&u<3.1?Math.min(E(P(u,.1,.3)),1-E(P(u,2.8,3.05))):0,`translate(${hx-30}px,${hy-10}px) scale(${tap?.9:1}) rotate(-14deg)`);
+  ML.ring(c,u,2.15,830,Y0+310,.85,40,210);ML.burst(c,u,2.15,830,Y0+310,.9);}};
+</script>
+<script src="_core.js"></script>
+</body></html>

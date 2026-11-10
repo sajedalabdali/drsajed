@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>خطوات مرقّمة</title>
+<style>#sp{left:120px;width:840px}#tt{font-size:72px;font-weight:800;text-align:center;margin-bottom:50px;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.st{position:relative;height:170px;display:flex;align-items:center;gap:34px}
+.st .dot{position:relative;z-index:2;width:110px;height:110px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-family:'Readex Pro';font-weight:600;font-size:52px;border:3px solid var(--accent);background:#0e0d0c;color:var(--accent)}
+.st .tx{font-size:54px;font-weight:700;white-space:nowrap;text-shadow:0 4px 24px rgba(0,0,0,.6)}
+#ln{position:absolute;right:53px;width:4px;background:var(--accent);transform-origin:50% 0;box-shadow:0 0 16px var(--accent)}</style></head>
+<body>
+<div id="sp" class="a ar"><div id="tt"></div><div id="sw" style="position:relative"><div id="ln"></div><div id="ss"></div></div></div>
+<script>
+window.TPL = {duration:4.5, defaults:{title:'العنوان', steps:['الخطوة الأولى','الخطوة الثانية','الخطوة الثالثة'], y:520, gap:.7},
+ build(D){const $=ML.$;$('sp').style.top=D.y+'px';$('tt').innerHTML=ML.rich(D.title);$('ss').innerHTML=D.steps.map((s,i)=>`<div class="st" id="s${i}"><div class="dot" id="d${i}">${i+1}</div><div class="tx">${ML.rich(s)}</div></div>`).join('');
+  $('ln').style.top='85px';$('ln').style.height=((D.steps.length-1)*170)+'px';},
+ draw(t,D){const $=ML.$,e=ML.dur,o=ML.eio(ML.P(t,e-.4,e));ML.riseIn($('tt'),t,0,e);const n=D.steps.length;
+  $('ln').style.transform=`scaleY(${ML.eio(ML.P(t,.6,.6+(n-1)*D.gap))})`;$('ln').style.opacity=1-o;
+  D.steps.forEach((s,i)=>{const T=.5+i*D.gap,k=ML.ex(ML.P(t,T,T+.4));ML.vis($('s'+i),Math.min(k,1-o),`translateX(${ML.L(-60,0,k)}px)`);
+   const f=ML.eo(ML.P(t,T+.15,T+.4)),d=$('d'+i);d.style.background=f>.5?D.accent:'#0e0d0c';d.style.color=f>.5?'#0A0A0A':D.accent;d.style.transform=`scale(${ML.cl(ML.back(ML.P(t,T,T+.4)),0,1.2)})`;d.style.boxShadow=`0 0 ${40*Math.sin(Math.PI*ML.P(t,T+.15,T+.7))}px ${D.accent}`;});}};
+</script>
+<script src="_core.js"></script>
+</body></html>

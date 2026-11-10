@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>ختم</title>
+<style>#s{left:0;width:1080px;text-align:center}#s b{display:inline-block;padding:6px 40px 16px;border:7px solid var(--accent);border-radius:20px;color:var(--accent);font-size:var(--sz,120px);font-weight:900;background:rgba(10,10,10,.6);box-shadow:0 0 60px color-mix(in srgb,var(--accent) 35%,transparent);white-space:nowrap}
+canvas{left:0;top:0}</style></head>
+<body>
+<canvas id="c" class="a" width="1080" height="1920"></canvas><div id="s" class="a ar"><b id="sb"></b></div>
+<script>
+window.TPL = {duration:2.5, defaults:{text:'مجاني', rotate:-8, y:1000, size:120},
+ build(D){ML.$('s').style.top=D.y+'px';ML.$('sb').textContent=D.text;ML.$('s').style.setProperty('--sz',D.size+'px');},
+ draw(t,D){const e=ML.dur,k=ML.P(t,0,.18),o=ML.eio(ML.P(t,e-.35,e));const c=ML.$('c').getContext('2d');c.clearRect(0,0,1080,1920);
+  const sh=t>.18&&t<.4?Math.sin(t*90)*6*(1-ML.P(t,.18,.4)):0;
+  ML.vis(ML.$('sb'),Math.min(1,k*3)*(1-o),`translate(${sh}px,${-o*30}px) scale(${ML.L(2.3,1,ML.eo(k))}) rotate(${D.rotate}deg)`);ML.ring(c,t,.15,540,D.y+80,.7,80,420);}};
+</script>
+<script src="_core.js"></script>
+</body></html>

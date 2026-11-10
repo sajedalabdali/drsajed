@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>مقارنة قبل وبعد</title>
+<style>.cd{top:0;width:420px;height:520px;border-radius:36px;padding:40px 34px;display:flex;flex-direction:column;align-items:center;gap:26px;text-align:center}
+#b{left:560px;background:rgba(20,20,20,.94);border:2px solid #2a2a2a}#af{left:100px;background:rgba(20,16,14,.94);border:2px solid var(--accent);box-shadow:0 0 70px color-mix(in srgb,var(--accent) 30%,transparent)}
+.cd .mk{width:110px;height:110px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:64px;font-weight:800}
+#b .mk{background:#2a2a2a;color:#8a8a8a}#af .mk{background:var(--accent);color:#0A0A0A}
+.cd .h{font-size:60px;font-weight:800}.cd .p{font-size:42px;line-height:1.35;color:#c9c9cf}#b .h{color:#9a9aa2}
+#vs{left:470px;top:200px;width:140px;height:140px;border-radius:50%;background:#0d0d0d;border:3px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:38px;color:var(--accent);z-index:3}
+#wrap{left:0;width:1080px;height:520px}</style></head>
+<body>
+<div id="wrap" class="a ar"><div id="b" class="a cd"><div class="mk">✕</div><div class="h" id="bt"></div><div class="p" id="bp"></div></div><div id="af" class="a cd"><div class="mk">✓</div><div class="h" id="at"></div><div class="p" id="ap"></div></div><div id="vs" class="a">VS</div></div>
+<script>
+window.TPL = {duration:4.5, defaults:{beforeTitle:'قبل', beforeText:'الوصف', afterTitle:'بعد', afterText:'الوصف', y:700},
+ build(D){const $=ML.$;$('wrap').style.top=D.y+'px';$('bt').textContent=D.beforeTitle;$('bp').innerHTML=ML.rich(D.beforeText);$('at').textContent=D.afterTitle;$('ap').innerHTML=ML.rich(D.afterText);},
+ draw(t,D){const $=ML.$,e=ML.dur,o=ML.eio(ML.P(t,e-.4,e));const a=ML.ex(ML.P(t,0,.5)),b=ML.ex(ML.P(t,.9,1.4));
+  ML.vis($('b'),Math.min(a,1-o),`translateY(${ML.L(90,0,a)}px) scale(${ML.L(.9,1,a)*ML.L(1,.94,ML.eo(ML.P(t,1.2,1.6)))}) rotate(${ML.L(4,0,a)}deg)`);
+  $('b').style.filter=`grayscale(1) brightness(${ML.L(1,.75,ML.eo(ML.P(t,1.2,1.6)))})`;
+  ML.vis($('af'),Math.min(b,1-o),`translateY(${ML.L(90,0,b)}px) scale(${ML.L(.9,1,b)*(1+.03*Math.sin(Math.PI*ML.P(t,1.5,2.1)))}) rotate(${ML.L(-4,0,b)}deg)`);
+  const v=ML.back(ML.P(t,.55,.95));ML.vis($('vs'),t>.55?Math.min(ML.cl(v),1-o):0,`scale(${ML.cl(v,0,1.2)}) rotate(${ML.L(-90,0,ML.cl(v))}deg)`);}};
+</script>
+<script src="_core.js"></script>
+</body></html>

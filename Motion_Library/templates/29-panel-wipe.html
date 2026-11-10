@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>انتقال ألواح</title>
+<style>#pw{left:0;top:0;width:1080px;height:1920px;overflow:hidden}.pn{position:absolute;top:0;height:1920px;width:1080px}</style></head>
+<body>
+<div id="pw" class="a"></div>
+<script>
+window.TPL = {duration:1, defaults:{colors:['#E8835F','#0A0A0A'], direction:'right'},
+ build(D){ML.$('pw').innerHTML=D.colors.map((c,i)=>`<div class="pn" id="p${i}" style="background:${c}"></div>`).join('');},
+ draw(t,D){const e=ML.dur,h=e/2,n=D.colors.length,s=D.direction=='left'?-1:1;
+  D.colors.forEach((c,i)=>{const d=i*.06,inn=ML.eio(ML.P(t,d,h)),out=ML.eio(ML.P(t,h+(n-1-i)*.06,e));const x=t<h?ML.L(1080,0,inn):ML.L(0,-1080,out);ML.$('p'+i).style.transform=`translateX(${s*x}px)`;});}};
+</script>
+<script src="_core.js"></script>
+</body></html>

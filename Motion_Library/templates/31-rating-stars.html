@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>تقييم نجوم</title>
+<style>#rt{left:0;width:1080px;text-align:center}#ss{display:flex;justify-content:center;gap:18px;direction:ltr}.s{position:relative;width:150px;height:150px}.s svg{position:absolute;inset:0}
+#nv{font-family:'Readex Pro';font-weight:600;font-size:150px;letter-spacing:-.04em;margin-top:30px;direction:ltr}#nv small{font-size:60px;color:#8d8a84}#lb{font-size:52px;font-weight:700;margin-top:4px}</style></head>
+<body>
+<div id="rt" class="a ar"><div id="ss"></div><div id="nv"><span id="n">0</span><small> / 5</small></div><div id="lb"></div></div>
+<script>
+window.TPL = {duration:3.5, defaults:{rating:5, label:'', y:640},
+ build(D){const $=ML.$;$('rt').style.top=D.y+'px';$('lb').innerHTML=ML.rich(D.label);const st='M12 2.8l2.8 6 6.5.7-4.9 4.4 1.4 6.4L12 17l-5.8 3.3 1.4-6.4L2.7 9.5l6.5-.7z';
+  $('ss').innerHTML=[0,1,2,3,4].map(i=>`<div class="s" id="s${i}"><svg viewBox="0 0 24 24"><path d="${st}" fill="#2a2725"/></svg><svg viewBox="0 0 24 24" style="clip-path:inset(0 100% 0 0)" id="f${i}"><path d="${st}" fill="var(--accent)"/></svg></div>`).join('');},
+ draw(t,D){const $=ML.$,e=ML.dur,o=ML.eio(ML.P(t,e-.4,e));$('rt').style.opacity=1-o;
+  for(let i=0;i<5;i++){const T=.1+i*.12,k=ML.back(ML.P(t,T,T+.4));$('s'+i).style.transform=`scale(${ML.cl(k,0,1.2)})`;const F=.7+i*.22,fill=ML.cl(D.rating-i)*ML.eo(ML.P(t,F,F+.2));$('f'+i).style.clipPath=`inset(0 ${(1-fill)*100}% 0 0)`;$('f'+i).style.filter=fill>0?`drop-shadow(0 0 ${14*fill}px ${D.accent})`:'none';}
+  const c=ML.eio(ML.P(t,.7,1.9));$('n').textContent=(D.rating*c).toFixed(1);ML.riseIn($('lb'),t,1.0,e);}};
+</script>
+<script src="_core.js"></script>
+</body></html>

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>سعر وعرض</title>
+<style>#pt{left:0;width:1080px;text-align:center}#ol{position:relative;display:inline-flex;align-items:baseline;font-family:'Readex Pro';font-weight:500;font-size:110px;color:#8d8a84;direction:ltr}#ol i{position:absolute;left:-10px;right:-10px;top:52%;height:9px;background:#e5484d;border-radius:5px;transform:rotate(-8deg) scaleX(0);transform-origin:left center}
+#nw{display:flex;justify-content:center;align-items:baseline;margin-top:50px;font-family:'Readex Pro';font-weight:600;font-size:250px;letter-spacing:-.05em;line-height:1.05;color:var(--accent);direction:ltr;text-shadow:0 0 70px color-mix(in srgb,var(--accent) 45%,transparent)}#nw small{font-size:90px;margin-left:14px}
+#bd{display:inline-block;margin-top:20px;padding:12px 36px 18px;border-radius:999px;background:var(--accent);color:#0A0A0A;font-size:58px;font-weight:900}</style></head>
+<body>
+<div id="pt" class="a ar"><div><span id="ol"><span id="ov"></span><i id="sk"></i></span></div><div id="nw"><span id="nv"></span><small id="cu"></small></div><div id="bd"></div></div>
+<script>
+window.TPL = {duration:3.5, defaults:{old:'100', new:'50', currency:'$', badge:'', y:640},
+ build(D){const $=ML.$;$('pt').style.top=D.y+'px';$('ov').innerHTML=`<span>${ML.esc(D.old)}</span><span style="margin-left:24px;font-size:.6em;unicode-bidi:isolate">${ML.esc(D.currency)}</span>`;$('ov').style.display='inline-flex';$('ov').style.alignItems='baseline';$('nv').textContent=D.new;$('cu').textContent=D.currency;$('cu').style.unicodeBidi='isolate';$('bd').textContent=D.badge;if(!D.badge)$('bd').style.display='none';},
+ draw(t,D){const $=ML.$,e=ML.dur,o=ML.eio(ML.P(t,e-.4,e));$('pt').style.opacity=1-o;const a=ML.eo(ML.P(t,0,.4));$('ol').style.opacity=a;$('ol').style.transform=`translateY(${ML.L(30,0,a)}px)`;
+  $('sk').style.transform=`rotate(-8deg) scaleX(${ML.eo(ML.P(t,.6,.85))})`;const n=ML.back(ML.P(t,1.0,1.4));ML.vis($('nw'),t>1?ML.cl(n*2):0,`scale(${ML.cl(n,0,1.15)})`);
+  const b=ML.back(ML.P(t,1.4,1.75));ML.vis($('bd'),t>1.4?ML.cl(b*2):0,`scale(${ML.cl(b,0,1.2)}) rotate(${ML.L(-12,-3,ML.cl(b))}deg)`);}};
+</script>
+<script src="_core.js"></script>
+</body></html>

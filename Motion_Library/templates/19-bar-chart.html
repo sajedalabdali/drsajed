@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>رسم بياني أعمدة</title>
+<style>#ch{left:110px;width:860px;height:760px;padding:40px 40px 30px}
+#tt{font-size:52px;font-weight:800;text-align:center}
+#bs{position:absolute;left:40px;right:40px;bottom:30px;top:150px;display:flex;align-items:flex-end;justify-content:space-around;gap:30px}
+.b{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.b .v{font-family:'Readex Pro';font-weight:600;font-size:46px;letter-spacing:-.03em;direction:ltr;margin-bottom:12px}
+.b .c{width:100%;border-radius:18px 18px 6px 6px;background:#3a3633;transform-origin:50% 100%}
+.b.h .c{background:var(--accent);box-shadow:0 0 50px color-mix(in srgb,var(--accent) 45%,transparent)}.b.h .v{color:var(--accent)}
+.b .l{font-size:34px;font-weight:700;margin-top:16px;white-space:nowrap;color:#c9c9cf}</style></head>
+<body>
+<div id="ch" class="a glass ar"><div id="tt"></div><div id="bs"></div></div>
+<script>
+window.TPL = {duration:4, defaults:{title:'العنوان', bars:[{label:'أ',value:10},{label:'ب',value:20,highlight:true}], suffix:'', y:600},
+ build(D){const $=ML.$;$('ch').style.top=D.y+'px';$('tt').innerHTML=ML.rich(D.title);const mx=Math.max(...D.bars.map(b=>b.value));
+  $('bs').innerHTML=D.bars.map((b,i)=>`<div class="b${b.highlight?' h':''}"><div class="v" id="v${i}">0</div><div class="c" id="c${i}" style="height:${Math.max(4,b.value/mx*380)}px"></div><div class="l">${ML.esc(b.label)}</div></div>`).join('');},
+ draw(t,D){const $=ML.$,e=ML.dur,k=ML.ex(ML.P(t,0,.45)),o=ML.eio(ML.P(t,e-.4,e));ML.vis($('ch'),Math.min(k,1-o),`translateY(${ML.L(80,0,k)}px) scale(${ML.L(.94,1,k)})`);
+  D.bars.forEach((b,i)=>{const T=.45+i*.25,g=ML.eio(ML.P(t,T,T+.9));$('c'+i).style.transform=`scaleY(${g})`;$('v'+i).textContent=Math.round(b.value*g)+(D.suffix||'');$('v'+i).style.opacity=ML.eo(ML.P(t,T,T+.3));});}};
+</script>
+<script src="_core.js"></script>
+</body></html>

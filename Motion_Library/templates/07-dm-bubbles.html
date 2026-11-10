@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>رسائل دايركت</title>
+<style>.dm{right:120px;padding:22px 34px 26px;border-radius:44px 44px 12px 44px;background:rgba(28,28,30,.95);border:2px solid #2c2c2e;font-size:46px;font-weight:600;white-space:nowrap;box-shadow:0 24px 70px rgba(0,0,0,.7);display:flex;align-items:center;gap:20px}
+.dm .av{width:62px;height:62px;border-radius:50%;flex:none;background:conic-gradient(var(--accent),#fff,var(--accent))}
+.dm .u{font-family:var(--mono);font-size:20px;color:#8d8a84;letter-spacing:.08em;direction:ltr;display:block;margin-bottom:4px;text-align:right}
+canvas{left:0;top:0}</style></head>
+<body>
+<canvas id="fx" class="a" width="1080" height="1920"></canvas><div id="dms" class="ar"></div>
+<script>
+window.TPL = {duration:4, defaults:{messages:[{user:'@user',text:'رسالة'}], y:1170, gap:.8},
+ build(D){ML.$('dms').innerHTML=D.messages.map((m,i)=>`<div class="a dm" id="m${i}" style="top:${D.y+i*150}px"><div class="av"></div><div><span class="u">${ML.esc(m.user||'')}</span>${ML.rich(m.text)}</div></div>`).join('');},
+ draw(t,D){const e=ML.dur,o=ML.eio(ML.P(t,e-.35,e)),c=ML.$('fx').getContext('2d');c.clearRect(0,0,1080,1920);
+  D.messages.forEach((m,i)=>{const T=.1+i*D.gap,k=ML.back(ML.P(t,T,T+.42));ML.vis(ML.$('m'+i),t>T?Math.min(ML.cl(k*1.6),1-o):0,`translateY(${ML.L(80,0,ML.cl(k))-o*40}px) scale(${ML.L(.85,1,ML.cl(k,0,1.1))})`);ML.ring(c,t,T,880,D.y+40+i*150,.6,40,200);});}};
+</script>
+<script src="_core.js"></script>
+</body></html>

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>قلوب طايرة</title>
+<style>canvas{left:0;top:0}</style></head>
+<body>
+<canvas id="c" class="a" width="1080" height="1920"></canvas>
+<script>
+window.TPL = {duration:3, defaults:{emoji:['❤️'], count:24, x:860, y:1650},
+ draw(t,D){const c=ML.$('c').getContext('2d');c.clearRect(0,0,1080,1920);c.textAlign='center';c.textBaseline='middle';
+  for(let i=0;i<D.count;i++){const r=k=>{const x=Math.sin((i+1)*(k+3)*12.9898)*43758.5453;return x-Math.floor(x);};const s=r(1)*(ML.dur-1.4),life=1.2+r(2)*.6,u=(t-s)/life;if(u<0||u>1)continue;
+   const x=D.x+(r(3)-.5)*160+Math.sin(u*6+i)*40*u,y=D.y-u*(700+r(4)*400),sz=60+r(5)*50;c.globalAlpha=Math.min(1,u*6)*(1-Math.pow(u,2));c.font=`${sz*ML.L(.5,1,ML.eo(Math.min(1,u*4)))}px serif`;c.fillText(D.emoji[i%D.emoji.length],x,y);}
+  c.globalAlpha=1;}};
+</script>
+<script src="_core.js"></script>
+</body></html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>قائمة صح</title>
+<style>#cl{left:150px;width:780px}#tt{font-size:72px;font-weight:800;text-align:center;margin-bottom:40px;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.ci{display:flex;align-items:center;gap:30px;height:118px;padding:0 30px;margin-bottom:18px;border-radius:26px;background:rgba(14,14,14,.9);border:2px solid #262626}
+.bx{width:70px;height:70px;border-radius:18px;border:3px solid #555;flex:none;display:flex;align-items:center;justify-content:center}
+.bx svg{width:46px;height:46px}.bx path{stroke-dasharray:30;stroke-dashoffset:30}
+.ci .tx{position:relative;font-size:52px;font-weight:700;white-space:nowrap}.ci .sk{position:absolute;right:0;top:55%;height:5px;background:var(--accent);border-radius:3px;width:100%;transform-origin:right center;transform:scaleX(0)}</style></head>
+<body>
+<div id="cl" class="a ar"><div id="tt"></div><div id="cs"></div></div>
+<script>
+window.TPL = {duration:4.5, defaults:{title:'العنوان', items:['واحد','اثنين','ثلاثة'], strike:false, y:520, gap:.55},
+ build(D){const $=ML.$;$('cl').style.top=D.y+'px';$('tt').innerHTML=ML.rich(D.title);
+  $('cs').innerHTML=D.items.map((s,i)=>`<div class="ci" id="c${i}"><div class="bx" id="b${i}"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path id="p${i}" d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div class="tx">${ML.rich(s)}<i class="sk" id="k${i}"></i></div></div>`).join('');},
+ draw(t,D){const $=ML.$,e=ML.dur,o=ML.eio(ML.P(t,e-.4,e));ML.riseIn($('tt'),t,0,e);
+  D.items.forEach((s,i)=>{const T=.35+i*.18,k=ML.ex(ML.P(t,T,T+.4));ML.vis($('c'+i),Math.min(k,1-o),`translateY(${ML.L(40,0,k)}px)`);
+   const C=1.1+i*D.gap,f=ML.eo(ML.P(t,C,C+.25));const b=$('b'+i);b.style.background=f>.3?D.accent:'transparent';b.style.borderColor=f>.3?D.accent:'#555';b.style.transform=`scale(${ML.cl(ML.back(ML.P(t,C,C+.35)),.6,1.25)})`;
+   $('p'+i).style.strokeDashoffset=30*(1-ML.eo(ML.P(t,C+.08,C+.35)));$('c'+i).style.borderColor=f>.3?`color-mix(in srgb,var(--accent) 45%,#262626)`:'#262626';
+   if(D.strike)$('k'+i).style.transform=`scaleX(${ML.eio(ML.P(t,C+.15,C+.5))})`;});}};
+</script>
+<script src="_core.js"></script>
+</body></html>

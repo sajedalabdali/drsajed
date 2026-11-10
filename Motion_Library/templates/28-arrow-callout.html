@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>سهم وملاحظة</title>
+<style>svg{left:0;top:0}#lb{padding:16px 30px 20px;border-radius:24px;background:var(--accent);color:#0A0A0A;font-size:50px;font-weight:800;white-space:nowrap;transform-origin:50% 100%}</style></head>
+<body>
+<svg class="a" width="1080" height="1920"><path id="ar" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round"/><path id="hd" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg><div id="lb" class="a ar"></div>
+<script>
+window.TPL = {duration:3, defaults:{text:'هنا', tx:540, ty:1100, lx:220, ly:760},
+ build(D){const $=ML.$;$('lb').textContent=D.text;const sx=D.lx+120,sy=D.ly+110,mx=(sx+D.tx)/2+(D.ty>sy?-120:120),my=(sy+D.ty)/2;
+  const p=`M${sx} ${sy} Q${mx} ${my} ${D.tx} ${D.ty}`;$('ar').setAttribute('d',p);const L=$('ar').getTotalLength();window._AL=L;$('ar').style.strokeDasharray=L;
+  const a=Math.atan2(D.ty-my,D.tx-mx),h=46;$('hd').setAttribute('d',`M${D.tx-h*Math.cos(a-.5)} ${D.ty-h*Math.sin(a-.5)} L${D.tx} ${D.ty} L${D.tx-h*Math.cos(a+.5)} ${D.ty-h*Math.sin(a+.5)}`);$('lb').style.left=D.lx+'px';$('lb').style.top=D.ly+'px';},
+ draw(t,D){const $=ML.$,e=ML.dur,o=ML.eio(ML.P(t,e-.35,e));const k=ML.back(ML.P(t,0,.4));ML.vis($('lb'),Math.min(ML.cl(k*2),1-o),`scale(${ML.cl(k,0,1.15)}) rotate(-3deg)`);
+  const d=ML.eio(ML.P(t,.3,.9));$('ar').style.strokeDashoffset=window._AL*(1-d);$('ar').style.opacity=1-o;$('hd').style.opacity=(d>.97?1:0)*(1-o);}};
+</script>
+<script src="_core.js"></script>
+</body></html>

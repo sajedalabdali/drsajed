@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>انتقال دائري</title>
+<style>canvas{left:0;top:0}</style></head>
+<body>
+<canvas id="c" class="a" width="1080" height="1920"></canvas>
+<script>
+window.TPL = {duration:1.2, defaults:{color:'#0A0A0A', cx:540, cy:960},
+ draw(t,D){const c=ML.$('c').getContext('2d'),e=ML.dur,h=e/2;c.clearRect(0,0,1080,1920);const R0=1250;
+  const close=ML.eio(ML.P(t,0,h)),open=ML.ex(ML.P(t,h,e));const r=t<h?R0*(1-close):R0*open;
+  c.fillStyle=D.color;c.beginPath();c.rect(0,0,1080,1920);if(r>0){c.moveTo(D.cx+r,D.cy);c.arc(D.cx,D.cy,r,0,Math.PI*2,true);}c.fill('evenodd');
+  if(r>2&&r<R0*.98){c.strokeStyle=D.accent;c.lineWidth=7;c.globalAlpha=.9;c.beginPath();c.arc(D.cx,D.cy,r,0,7);c.stroke();c.globalAlpha=1;}}};
+</script>
+<script src="_core.js"></script>
+</body></html>

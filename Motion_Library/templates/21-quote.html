@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8"><title>اقتباس</title>
+<style>#q{left:90px;width:900px;text-align:center}#qm{font-family:'Amiri';font-size:300px;line-height:.6;color:var(--accent);height:150px;margin-bottom:40px;text-shadow:0 0 60px color-mix(in srgb,var(--accent) 40%,transparent)}
+.ql{font-size:78px;font-weight:800;line-height:1.35;text-shadow:0 4px 30px rgba(0,0,0,.6)}#au{margin-top:34px;font-size:36px;color:#c9c9cf;display:flex;align-items:center;justify-content:center;gap:16px}#au i{display:inline-block;width:50px;height:3px;background:var(--accent)}</style></head>
+<body>
+<div id="q" class="a ar"><div id="qm">”</div><div id="ql"></div><div id="au"><i></i><span id="an"></span><i></i></div></div>
+<script>
+window.TPL = {duration:4.5, defaults:{text:'السطر الأول|السطر الثاني', author:'', y:560},
+ build(D){const $=ML.$;$('q').style.top=D.y+'px';$('ql').innerHTML=D.text.split('|').map((l,i)=>`<div class="ql" id="l${i}">${ML.rich(l)}</div>`).join('');$('an').textContent=D.author;if(!D.author)$('au').style.display='none';},
+ draw(t,D){const $=ML.$,e=ML.dur;const m=ML.back(ML.P(t,0,.5)),o=ML.eio(ML.P(t,e-.35,e));ML.vis($('qm'),Math.min(ML.cl(m*1.5),1-o),`scale(${ML.cl(m,0,1.2)}) rotate(${ML.L(-20,0,ML.cl(m))}deg)`);
+  D.text.split('|').forEach((_,i)=>ML.riseIn($('l'+i),t,.35+i*.4,e+i*.04));ML.riseIn($('au'),t,.35+D.text.split('|').length*.4+.2,e);}};
+</script>
+<script src="_core.js"></script>
+</body></html>
